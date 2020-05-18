@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: "Roboto Mono", monospace;
+  overflow: hidden;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#upperleft {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+#upperright {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#bottomleft {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 100px;
+  height: fit-content;
+}
+
+#bottomright {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+/* BOTTOM LEFT */
+.dotBox {
+  position: relative;
+  margin-top: 0px;
+  transition: margin-top 0.5s ease;
+}
+
+.dotBox .dot {
+  margin-left: 5px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  font-size: 0.8rem;
+}
+
+.dotBox i {
+  position: absolute;
+  top: -15px;
+  left: 2px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  font-size: 1.2rem;
+}
+
+#bottomleft:hover .dotBox {
+  margin-top: 30px;
+  transition: margin-top 0.4s ease;
+}
+
+#bottomleft:hover .dot {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  transition-delay: 0.2s;
+}
+
+#bottomleft:hover i {
+  opacity: 1;
+  transition: opacity 0.1s ease;
+  transition-delay: 0.2s;
+}
+
+/* UPPER LEFT */
+
+.logo-short {
+  position: absolute;
+  left: 0;
+  opacity: 1;
+  transition: opacity 0.1s ease;
+}
+
+.logo-full {
+  position: absolute;
+  width: 0;
+  left: 20px;
+  overflow-x: hidden;
+  transition: width 0.5s linear;
+}
+
+.logo-short {
+  position: relative;
+  left: 0;
+  opacity: 1;
+  transition: opacity 0.1s linear;
+  transition-delay: 0.55s;
+}
+
+.logo-dot {
+  position: relative;
+  margin-left: -20px;
+  transition: margin-left 0.4s linear;
+  transition-delay: 0.1s;
+}
+
+#upperleft:hover .logo-short {
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+
+#upperleft:hover .logo-full {
+  width: 300px;
+  transition: width 1s linear;
+}
+
+#upperleft:hover .logo-dot {
+  margin-left: 100px;
+  transition: margin-left 0.4s linear;
+}
+
+.cursor {
+  width: 1rem;
+  height: 1rem;
+  background-color: salmon;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  display: none;
+  transition: 0.15s linear;
+  animation: blobRadius 5s ease infinite, blobBackground 1s ease infinite;
+  z-index: -1;
+}
+
+@keyframes blobRadius {
+  0%,
+  100% {
+    border-radius: 43% 47% 80% 40% / 40% 40% 80% 80%;
+  }
+  20% {
+    border-radius: 47% 73% 61% 59% / 47% 75% 45% 73%;
+  }
+  40% {
+    border-radius: 46% 74% 74% 46% / 74% 58% 62% 46%;
+  }
+  60% {
+    border-radius: 47% 73% 61% 59% / 40% 40% 80% 80%;
+  }
+  80% {
+    border-radius: 50% 70% 52% 68% / 51% 61% 59% 69%;
+  }
+}
+
+@keyframes blobBackground {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* MAIN */
+main {
+  position: static;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("images/square.gif");
+}
+
+.letters {
+  text-align: center;
+  font-size: 3rem;
+  padding: 20px;
+}
+
+a {
+  position: relative;
+  background-color: "";
+  border-radius: 40px;
+  padding: 0px 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  position: relative;
+  margin: 20px 0px;
+  text-align: right;
+}
+
+/* NAV */
+.navBack1 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  background-color: salmon;
+  border-radius: 30%;
+  position: absolute;
+  pointer-events: none;
+  transition: 0.15s linear;
+  animation: blobRadius 3s ease infinite, blobBackground 1s ease infinite;
+  display: none;
+}
+
+.navBack2 {
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background-color: salmon;
+  border-radius: 20%;
+  position: absolute;
+  pointer-events: none;
+  transition: 0.15s linear;
+  animation: blobRadius 5s ease infinite, blobBackground 1s ease infinite;
+  display: none;
+}

@@ -1,0 +1,7 @@
+.blob {
+  fill: #ffb4bc;
+}
+
+svg {
+  transition: transform 0.5s ease;
+}
